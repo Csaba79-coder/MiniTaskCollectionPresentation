@@ -1,7 +1,6 @@
 package array;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Arrays {
 
@@ -84,4 +83,48 @@ public class Arrays {
             System.out.println(array[i] + " has the following digits: " + count);
         }
     }*/
+
+    private static int[] getNumOfDigits(int[] number) {
+        int[] numOfDigits = new int[number.length];
+        for (int i = 0; i < number.length; i++) {
+            int var1 = number[i];
+            while (var1 != 0) {
+                numOfDigits[i]++;
+            }
+            System.out.println("A tömböm " + i + ". eleme " + numOfDigits[i] + " db karakterből áll.");
+        }
+        return numOfDigits;
+    }
+
+    private static Set<Integer> getSet(int number) {
+        Set<Integer> digitsOfElement = new HashSet<>();
+        while (number != 0) {
+            digitsOfElement.add(number % 10);
+            number /= 10;
+        }
+        return digitsOfElement;
+    }
+
+    private static int getNumOfDigit(int num) {
+        int var1 = num;
+        int result = 0;
+        while (var1 != 0) {
+            var1 = var1 / 10;
+            result++;
+            return result;
+        }
+        return var1;
+    }
+
+    public HashMap<Integer, ArrayList<Integer>> resultOfDigitsAndNums(int[] array) {
+        HashMap<Integer, ArrayList<Integer>> hashMapOfDigitOfNums = new HashMap<>();
+        for (int i = 0; i < array.length; i++) {
+            int digits = getNumOfDigit(array[i]);
+            hashMapOfDigitOfNums.putIfAbsent(digits, new ArrayList<>());
+            List<Integer> value = hashMapOfDigitOfNums.get(digits);
+            value.add(array[i]);
+            hashMapOfDigitOfNums.put(digits, (ArrayList<Integer>) value);
+        }
+        return hashMapOfDigitOfNums;
+    }
 }
