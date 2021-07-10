@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Reader {
 
-    public static final List<Students> STUDENTS = new ArrayList<>();
+    public static List<Students> STUDENTS = new ArrayList<>();
 
     public Reader() {
     }
@@ -21,7 +21,7 @@ public class Reader {
         for (String line; (line = bufferedReader.readLine()) != null; ) {
             String[] parts = line.split(",");
             STUDENTS.add(new Students(parts[0], parts[1], Integer.parseInt(parts[2])));
-            System.out.println(line);
+            // System.out.println(line);
         }
     }
 
@@ -29,6 +29,11 @@ public class Reader {
         return STUDENTS;
     }
 
+    public static void printStudents(List<Students> students) {
+        for (int i = 0; i < students.size(); i++) {
+            System.out.println(students.get(i));
+        }
+    }
 }
 
 

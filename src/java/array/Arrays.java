@@ -1,5 +1,8 @@
 package array;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Arrays {
 
     public Arrays() {
@@ -49,8 +52,18 @@ public class Arrays {
                 array[i] /= 10;
                 digits[i]++;
             } while (array[i] != 0);
-            System.out.println(num + " has " + digits[i]);
+            System.out.println(num + " number has the following digit: " + digits[i]);
         }
+    }
+
+    public void checkUniqueDigits(int[] array) {
+        Set<Integer> numOfUniqueDigits = new HashSet<>();
+        int[] uniqueDigits = new int[array.length];
+
+        for (int i = 0; i < uniqueDigits.length; i++) {
+            numOfUniqueDigits.add(uniqueDigits[i]);
+        }
+        System.out.println();
     }
 
 //    public int getDigits(int[] array) {

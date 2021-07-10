@@ -28,7 +28,8 @@ public class Sets {
         while (i < arraysSet.size()) {
             i++;
         }
-        System.out.println(arraysSet);
+        System.out.println("The elements of the set are: " + arraysSet);
+        System.out.println("The size of the set is: " + arraysSet.size());
     }
 
     public Set<Integer> setSetsOddNums(Integer[] numbers) {
