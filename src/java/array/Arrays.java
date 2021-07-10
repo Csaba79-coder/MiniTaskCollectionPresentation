@@ -127,4 +127,20 @@ public class Arrays {
         }
         return hashMapOfDigitOfNums;
     }
+
+
+    public HashMap<Integer, List<Integer>> resOfDigitNums(int[] array) {
+        HashMap<Integer, List<Integer>> groupOfNumsByDigitsSelection = new HashMap<>();
+        for (int i = 0; i < array.length; i++) {
+            int currentLength = String.valueOf(array[i]).length();
+            if (groupOfNumsByDigitsSelection.containsKey(currentLength)) {
+                groupOfNumsByDigitsSelection.get(currentLength).add(array[i]);
+            } else {
+                List<Integer> list = new ArrayList<>();
+                list.add(array[i]);
+                groupOfNumsByDigitsSelection.put(currentLength, list);
+            }
+        }
+        return groupOfNumsByDigitsSelection;
+    }
 }

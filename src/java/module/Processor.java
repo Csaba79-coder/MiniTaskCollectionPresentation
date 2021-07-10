@@ -48,7 +48,7 @@ public class Processor {
         int[] numbers5 = {34808, 422, 334, 12014, 412617, 292389, 342260, 32244, 334534, 497721, 3775, 544, 433, 55340,
                 257952, 1496173, 539141, 3355, 305720, 3677429, 114047, 5656};
 
-        System.out.println(arrays.resultOfDigitsAndNums(numbers5));
+        System.out.println(arrays.resOfDigitNums(numbers5));
 
         System.out.println("------------5th Exercise------------");
 
