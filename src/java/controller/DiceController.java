@@ -21,7 +21,7 @@ public class DiceController {
 
     public HashMap<Integer, Integer> throwWithDice(int throwing) {
         for (int i = 0; i < throwing; i++) {
-            int numThrownWithDice = random.getRandomNumber(dice.MIN, dice.MAX);
+            int numThrownWithDice = random.getRandomNumberForDice(dice.MIN, dice.MAX);
             var put = throwingWithDices.put((this.throwing + 1), numThrownWithDice);
             this.throwing++;
             if (numThrownWithDice == 1) {

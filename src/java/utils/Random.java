@@ -14,7 +14,7 @@ public class Random {
 
     // for random generator! needs max +1 value for using dice correctly!
 
-    public int getRandomNumber(DiceEnum MIN, DiceEnum MAX) {
+    public int getRandomNumberForDice(DiceEnum MIN, DiceEnum MAX) {
         return (int) ((Math.random() * ((DiceEnum.MAX.getNUM() + 1) - DiceEnum.MIN.getNUM())) + DiceEnum.MIN.getNUM());
     }
 }
